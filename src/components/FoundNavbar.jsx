@@ -258,14 +258,14 @@ function FoundNavbar() {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                <MenuItem onClick={handleCloseNavMenu} className="nav-link">
-                  <Typography textAlign="center">FOUND AN ITEM?</Typography>
+                <MenuItem onClick={()=>{handleCloseNavMenu(); toggleShow();}} className="nav-link">
+                  <Typography textAlign="center">Found An Item?</Typography>
                 </MenuItem>
-                <Link to="/lost">
-                  <MenuItem onClick={handleCloseNavMenu} className="nav-link">
-                    <Typography textAlign="center">LOST ITEMS LIST</Typography>
+           
+                  <MenuItem onClick={()=>{handleCloseNavMenu(); navigate('/lost')}} >
+                    <Typography textAlign="center">Lost Items List</Typography>
                   </MenuItem>
-                </Link>
+        
               </Menu>
             </Box>
 

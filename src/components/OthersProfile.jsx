@@ -54,35 +54,40 @@ export default function Profile() {
         <>
           <ProfileNavbar />
           <div className="my-profile">
-            <div className="banner">
-              <div className="profile-img">
-              <lottie-player
+          <div className="banner">
+              <div className="rotate-anim">
+                <lottie-player
                   src="https://assets2.lottiefiles.com/packages/lf20_iCsx2UJOgF.json"
                   background="transparent"
                   speed="1"
                   className="profile-bg"
                   loop
-                  style={{height:"400px", width:"400px", position:"absolute", left:"0", top:"50px"}}
+                  style={{
+                    height: "350px",
+                    width: "350px",
+                  }}
                   autoplay
                 ></lottie-player>
                 <img src={user.profileImg} alt="" />
-                <h5>{user.name}</h5>
               </div>
-              <div className="mail-phone">
-                <h5>
-                  <AiOutlineMail />
-                  &nbsp; &nbsp;{user.email}
-                </h5>
-                <h5>
-                  <BsPhone /> &nbsp; &nbsp;{user.contactNumber}
-                </h5>
+              <div className="username">
+                <h1>{user.name}</h1>
+                <div className="email-phone">
+                  <h5>
+                    <AiOutlineMail style={{display:"inline"}} />
+                    &nbsp; &nbsp;{user.email}
+                  </h5>
+                  <h5>
+                    <BsPhone style={{display:"inline"}} /> &nbsp; &nbsp;{user.contactNumber}
+                  </h5>
+                </div>
               </div>
             </div>
             <h1 className="heading" style={{ color: "#C21010" }}>
               LOST POSTS ({user.lostPosts.length})
             </h1>
 
-            <div className="lost-post">
+            <div className="user-lost-post">
               {swipe&&<lottie-player
                 src="https://assets5.lottiefiles.com/packages/lf20_IteuUq.json"
                 background="transparent"
@@ -122,7 +127,7 @@ export default function Profile() {
             <h1 className="heading" style={{ color: "#59CE8F" }}>
               FOUND POSTS ({user.foundPosts.length})
             </h1>
-            <div className="found-post">
+            <div className="user-found-post">
               {!user.foundPosts ? (
                 <div className="lottie">
                   <lottie-player

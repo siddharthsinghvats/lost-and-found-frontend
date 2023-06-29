@@ -270,7 +270,7 @@ function LostNavbar() {
                 <MenuItem onClick={toggleShow} className="nav-link">
                   <Typography textAlign="center">Lost An Item ?</Typography>
                 </MenuItem>
-                <MenuItem onClick={handleCloseNavMenu} className="nav-link">
+                <MenuItem onClick={()=>{handleCloseNavMenu(); navigate('/found')}} className="nav-link">
                   <Typography textAlign="center">Found Items List</Typography>
                 </MenuItem>
               </Menu>

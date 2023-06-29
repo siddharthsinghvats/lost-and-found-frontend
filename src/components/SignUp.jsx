@@ -59,12 +59,10 @@ function Signup() {
     <>
     {
       loading?<Loading/>:
-    <MDBContainer fluid className=" overflow-hidden" style={{padding:"5rem 10rem"}}>
-      <MDBRow>
+    <MDBContainer fluid className=" overflow-hidden signup-container"  style={{padding:"4rem 2rem"}}>
+      <MDBRow className="signup">
         <MDBCol
-          lg="7"
-          className="text-center text-md-start d-flex flex-column justify-content-center align-items-left "
-          style={{width:"40%", marginRight:"10%"}}
+          className="signup-text"
         >
           <h1
             className="my-5 display-3 fw-bold ls-tight px-3"
@@ -76,7 +74,7 @@ function Signup() {
             </span>
           </h1>
 
-          <p className="px-3" style={{color:"white",textAlign:"justify", fontSize:"large" , lineHeight:"1.5"}}>
+          <p className="px-3" style={{color:"white",textAlign:"left", fontSize:"medium" , lineHeight:"1.5"}}>
             Find lost items with ease by signing up today. Our user-friendly
             interface connects you with a helpful community ready to assist.
             Share details, upload pictures, and increase the chances of a
@@ -86,7 +84,7 @@ function Signup() {
           </p>
         </MDBCol>
 
-        <MDBCol lg="5" className="position-relative">
+        <MDBCol  className=" signup-form">
           <div
             id="radius-shape-1"
             className="position-absolute rounded-circle shadow-5-strong"
@@ -96,8 +94,8 @@ function Signup() {
             className="position-absolute shadow-5-strong"
           ></div>
 
-          <MDBCard className="my-5 bg-glass  signup-form ">
-            <MDBCardBody className="p-5">
+          <MDBCard className="my-2 bg-glass inside-signup ">
+            <MDBCardBody >
               <div className="signup-logo">
                 <Link to='/'><img src={logo} alt="logo" /></Link>
               </div>

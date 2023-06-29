@@ -10,7 +10,7 @@ import { Scrollbar } from "react-scrollbars-custom";
 import Footer from "./Footer";
 import ProfileNavbar from "./ProfileNavbar";
 import Loading from "./Loading";
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const savedUser = JSON.parse(localStorage.getItem("user"));
 export default function Profile() {
@@ -20,10 +20,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch(
-          BACKEND_URL+
-          `/user/${savedUser._id}`
-        );
+        const response = await fetch(BACKEND_URL + `/user/${savedUser._id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch user");
         }
@@ -50,35 +47,39 @@ export default function Profile() {
           <ProfileNavbar />
           <div className="my-profile">
             <div className="banner">
-           
-              <div className="profile-img">
-              <lottie-player
+              <div className="rotate-anim">
+                <lottie-player
                   src="https://assets2.lottiefiles.com/packages/lf20_iCsx2UJOgF.json"
                   background="transparent"
                   speed="1"
                   className="profile-bg"
                   loop
-                  style={{height:"400px", width:"400px", position:"absolute", left:"0", top:"50px"}}
+                  style={{
+                    height: "350px",
+                    width: "350px",
+                  }}
                   autoplay
                 ></lottie-player>
                 <img src={user.profileImg} alt="" />
-                <h5>{user.name}</h5>
               </div>
-              <div className="mail-phone">
-                <h5>
-                  <AiOutlineMail />
-                  &nbsp; &nbsp;{user.email}
-                </h5>
-                <h5>
-                  <BsPhone /> &nbsp; &nbsp;{user.contactNumber}
-                </h5>
+              <div className="username">
+                <h1>{user.name}</h1>
+                <div className="email-phone">
+                  <h5>
+                    <AiOutlineMail style={{display:"inline"}} />
+                    &nbsp; &nbsp;{user.email}
+                  </h5>
+                  <h5>
+                    <BsPhone style={{display:"inline"}} /> &nbsp; &nbsp;{user.contactNumber}
+                  </h5>
+                </div>
               </div>
             </div>
             <h1 className="heading" style={{ color: "#FF0000" }}>
               LOST POSTS ({user.lostPosts.length})
             </h1>
 
-            <div className="lost-post">
+            <div className="user-lost-post">
               {swipe && (
                 <lottie-player
                   src="https://assets5.lottiefiles.com/packages/lf20_IteuUq.json"
@@ -120,7 +121,7 @@ export default function Profile() {
             <h1 className="heading" style={{ color: "#59CE8F" }}>
               FOUND POSTS ({user.foundPosts.length})
             </h1>
-            <div className="found-post">
+            <div className="user-found-post">
               {!user.foundPosts ? (
                 <div className="lottie">
                   <lottie-player

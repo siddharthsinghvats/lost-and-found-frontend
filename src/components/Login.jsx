@@ -58,9 +58,9 @@ function Login() {
       {loading ? (
         <Loading />
       ) : (
-        <MDBContainer  className=" px-5 my-5  ">
+        <MDBContainer  className="login-container  ">
           <MDBRow className="login">
-            <MDBCol col="10" md="5">
+            <MDBCol col="10" md="5" className="login-animation">
               <lottie-player
                 src="https://assets3.lottiefiles.com/packages/lf20_ntdmh9RIUC.json"
                 background="transparent"
