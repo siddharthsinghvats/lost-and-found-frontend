@@ -36,7 +36,7 @@ const options = {
       },
     },
     number: {
-      value: 200,
+      value: 120,
     },
     color: {
       value: "#fff",
